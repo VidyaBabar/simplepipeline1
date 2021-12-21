@@ -15,6 +15,7 @@ pipeline {
                   sh '''
                      ./build.sh
                   '''
+                  archiveArtifacts artifacts: 'test-results.txt', followSymlinks: false
                }
             }
         }
