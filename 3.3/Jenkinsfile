@@ -15,7 +15,6 @@ pipeline {
                   sh '''
                      ./build.sh
                   '''
-                  archiveArtifacts artifacts: 'test-results.txt', followSymlinks: false
                }
             }
         }
@@ -43,5 +42,6 @@ pipeline {
                    color: 'danger',
                    message: "Release ${env.RELEASE}, FAILED: ${currentBuild.fullDisplayName}."
       }
+      archiveArtifacts artifacts: 'test-results.txt', followSymlinks: false
    }
 }
