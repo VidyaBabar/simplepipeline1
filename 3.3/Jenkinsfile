@@ -33,7 +33,7 @@ pipeline {
    post {
       success {
          archiveArtifacts 'test-results.txt'
-         archiveArtifacts artifacts: 'test-results.txt', followSymlinks: false
+         slackSend channel: '#jenkins-notifications', color: 'Green', message: 'Passed ', teamDomain: 'vidyadevops', tokenCredentialId: '316f3e3d-a82a-40e2-ab7d-0523431c8277'
          slackSend channel: '#jenkins-notifications',
                    color: 'good',
                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
