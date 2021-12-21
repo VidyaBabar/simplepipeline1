@@ -34,7 +34,7 @@ pipeline {
       success {
          archiveArtifacts 'test-results.txt'
          slackSend channel: '#jenkins-notifications',
-                   color: 'green',
+                   color: 'good',
                    message: "Release ${env.RELEASE}, success: ${currentBuild.fullDisplayName}."
       }
       failure {
